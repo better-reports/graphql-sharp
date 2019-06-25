@@ -5,7 +5,10 @@ namespace GraphQLSharp
     public class GraphQLRequest
     {
         public string Query { get; set; }
+
         public string OperationName { get; set; }
+
+        public dynamic Variables { get; set; }
 
         public GraphQLRequest()
         {
