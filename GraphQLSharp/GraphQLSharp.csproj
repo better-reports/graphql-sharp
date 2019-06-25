@@ -5,7 +5,11 @@
     <Authors>Clement Gutel</Authors>
     <Company>Better Reports</Company>
     <Description>A simple GraphQL client.</Description>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/better-reports/graphql-sharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/better-reports/graphql-sharp</RepositoryUrl>
+    <PackageTags>graphql client</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
