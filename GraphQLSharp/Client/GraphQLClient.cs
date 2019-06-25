@@ -38,8 +38,7 @@ namespace GraphQLSharp
         public async Task<GraphQLResponse<T>> QueryAsync<T>(GraphQLRequest r, CancellationToken cancellationToken)
         {
             var queryJson = JsonConvert.SerializeObject(r, _serializerSettings);
-            var httpContent = new StringContent(queryJson);
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
+            var httpContent = new StringContent(queryJson, Encoding.UTF8, "application/json");
             var res = await _clientFactory.CreateClient()
                                           .PostAsync(_uri, httpContent, cancellationToken);
             var responseJson = await res.Content.ReadAsStringAsync();
