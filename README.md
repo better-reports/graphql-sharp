@@ -1,2 +1,2 @@
-# graphl-sharp
-A graphql client for .NET
+# GraphQL-sharp
+A GraphQL client for .NET
