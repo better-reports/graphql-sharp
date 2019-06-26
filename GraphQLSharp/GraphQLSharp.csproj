@@ -10,6 +10,7 @@
     <PackageProjectUrl>https://github.com/better-reports/graphql-sharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/better-reports/graphql-sharp</RepositoryUrl>
     <PackageTags>graphql client</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
