@@ -3,7 +3,7 @@ using System;
 
 namespace GraphQLSharp
 {
-    public class GraphQLError
+    public class GraphQLError<TExtensions>
     {
         [JsonProperty]
         public string Message { get; private set; }
@@ -15,6 +15,6 @@ namespace GraphQLSharp
         public object[] Path { get; private set; }
 
         [JsonProperty]
-        public dynamic Extensions { get; private set; }
+        public TExtensions Extensions { get; private set; }
     }
 }

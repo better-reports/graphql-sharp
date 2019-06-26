@@ -3,15 +3,15 @@ using System;
 
 namespace GraphQLSharp
 {
-    public class GraphQLResponse<T>
+    public class GraphQLResponse<TData, TExtensions, TErrorExtensions>
     {
         [JsonProperty]
-        public T Data { get; private set; }
+        public TData Data { get; private set; }
 
         [JsonProperty]
-        public GraphQLError[] Errors { get; private set; }
+        public GraphQLError<TErrorExtensions>[] Errors { get; private set; }
 
         [JsonProperty]
-        public dynamic Extensions { get; private set; }
+        public TExtensions Extensions { get; private set; }
     }
 }
