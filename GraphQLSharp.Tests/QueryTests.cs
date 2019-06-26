@@ -28,14 +28,14 @@ namespace GraphQLSharp.Tests
         [TestMethod]
         public async Task QueryDynamic()
         {
-            var res = await _starWarsClient.QueryAsync<dynamic>(new GraphQLRequest(_queryAllFilms));
+            var res = await _starWarsClient.PostAsync<dynamic>(new GraphQLRequest(_queryAllFilms));
             Assert.IsTrue(res.Data.allFilms.totalCount > 0);
         }
 
         [TestMethod]
         public async Task QueryAnonymous()
         {
-            var res = await _starWarsClient.QueryAsync(new GraphQLRequest(_queryAllFilms),
+            var res = await _starWarsClient.PostAsync(new GraphQLRequest(_queryAllFilms),
                                                                                     new
                                                                                     {
                                                                                         AllFilms = new
@@ -49,7 +49,7 @@ namespace GraphQLSharp.Tests
         [TestMethod]
         public async Task QueryDynamicError()
         {
-            var res = await _starWarsClient.QueryAsync<dynamic>(new GraphQLRequest(_querySyntaxError));
+            var res = await _starWarsClient.PostAsync<dynamic>(new GraphQLRequest(_querySyntaxError));
             Assert.IsTrue(res.Errors.Length > 0);
             Assert.IsTrue(res.Errors[0].Locations.Length > 0);
             Assert.IsTrue(res.Errors[0].Locations[0].Line > 0);

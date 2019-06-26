@@ -32,37 +32,37 @@ namespace GraphQLSharp
             _uri = uri;
         }
 
-        public Task<GraphQLResponse<TData, dynamic, dynamic>> QueryAsync<TData>(GraphQLRequest r)
+        public Task<GraphQLResponse<TData, dynamic, dynamic>> PostAsync<TData>(GraphQLRequest r)
         {
-            return QueryAsync<TData, dynamic, dynamic>(r, CancellationToken.None);
+            return PostAsync<TData, dynamic, dynamic>(r, CancellationToken.None);
         }
 
-        public Task<GraphQLResponse<TData, TExtensions, dynamic>> QueryAsync<TData, TExtensions>(GraphQLRequest r)
+        public Task<GraphQLResponse<TData, TExtensions, dynamic>> PostAsync<TData, TExtensions>(GraphQLRequest r)
         {
-            return QueryAsync<TData, TExtensions, dynamic>(r, CancellationToken.None);
+            return PostAsync<TData, TExtensions, dynamic>(r, CancellationToken.None);
         }
 
-        public Task<GraphQLResponse<TData, TExtensions, TErrorExtensions>> QueryAsync<TData, TExtensions, TErrorExtensions>(GraphQLRequest r)
+        public Task<GraphQLResponse<TData, TExtensions, TErrorExtensions>> PostAsync<TData, TExtensions, TErrorExtensions>(GraphQLRequest r)
         {
-            return QueryAsync<TData, TExtensions, TErrorExtensions>(r, CancellationToken.None);
+            return PostAsync<TData, TExtensions, TErrorExtensions>(r, CancellationToken.None);
         }
 
-        public Task<GraphQLResponse<T, dynamic, dynamic>> QueryAsync<T>(GraphQLRequest r, T responseAnonymousType)
+        public Task<GraphQLResponse<T, dynamic, dynamic>> PostAsync<T>(GraphQLRequest r, T responseAnonymousType)
         {
-            return QueryAsync<T, dynamic, dynamic>(r, CancellationToken.None);
+            return PostAsync<T, dynamic, dynamic>(r, CancellationToken.None);
         }
 
-        public Task<GraphQLResponse<TData, TExtensions, dynamic>> QueryAsync<TData, TExtensions>(GraphQLRequest r, TData responseAnonymousType, TExtensions extensionsAnonymousType)
+        public Task<GraphQLResponse<TData, TExtensions, dynamic>> PostAsync<TData, TExtensions>(GraphQLRequest r, TData responseAnonymousType, TExtensions extensionsAnonymousType)
         {
-            return QueryAsync<TData, TExtensions, dynamic>(r, CancellationToken.None);
+            return PostAsync<TData, TExtensions, dynamic>(r, CancellationToken.None);
         }
 
-        public Task<GraphQLResponse<TData, TExtensions, TErrorExtensions>> QueryAsync<TData, TExtensions, TErrorExtensions>(GraphQLRequest r, TData responseAnonymousType, TExtensions extensionsAnonymousType, TErrorExtensions errorExtensionsAnonymousType)
+        public Task<GraphQLResponse<TData, TExtensions, TErrorExtensions>> PostAsync<TData, TExtensions, TErrorExtensions>(GraphQLRequest r, TData responseAnonymousType, TExtensions extensionsAnonymousType, TErrorExtensions errorExtensionsAnonymousType)
         {
-            return QueryAsync<TData, TExtensions, TErrorExtensions>(r, CancellationToken.None);
+            return PostAsync<TData, TExtensions, TErrorExtensions>(r, CancellationToken.None);
         }
 
-        public async Task<GraphQLResponse<TData, TExtensions, TErrorExtensions>> QueryAsync<TData, TExtensions, TErrorExtensions>(GraphQLRequest r, CancellationToken cancellationToken)
+        public async Task<GraphQLResponse<TData, TExtensions, TErrorExtensions>> PostAsync<TData, TExtensions, TErrorExtensions>(GraphQLRequest r, CancellationToken cancellationToken)
         {
             var queryJson = JsonConvert.SerializeObject(r, _serializerSettings);
             var httpContent = new StringContent(queryJson, Encoding.UTF8, "application/json");
